@@ -14,22 +14,30 @@ test('setToStringTag', function (t) {
 
 	setToStringTag(obj, sentinel);
 
-	if (hasToStringTag) {
-		t.ok(has(obj, Symbol.toStringTag), 'has toStringTag property');
-		t.equal(obj[Symbol.toStringTag], sentinel, 'toStringTag property is as expected');
-	} else {
+	t.test('has Symbol.toStringTag', { skip: !hasToStringTag }, function (st) {
+		st.ok(has(obj, Symbol.toStringTag), 'has toStringTag property');
+
+		st.equal(obj[Symbol.toStringTag], sentinel, 'toStringTag property is as expected');
+
+		st.equal(String(obj), '[object Object]', 'toStringTag works');
+
+		st.end();
+	});
+
+	t.test('does not have Symbol.toStringTag', { skip: hasToStringTag }, function (st) {
 		var passed = true;
 		for (var key in obj) { // eslint-disable-line no-restricted-syntax
 			if (has(obj, key)) {
-				t.fail('object has own key ' + key);
+				st.fail('object has own key ' + key);
 				passed = false;
 			}
 		}
 		if (passed) {
-			t.ok(true, 'object has no enumerable own keys');
+			st.ok(true, 'object has no enumerable own keys');
 		}
-	}
-	t.equal(String(obj), '[object Object]', 'toStringTag works', { skip: !hasToStringTag });
+
+		st.end();
+	});
 
 	t.end();
 });
