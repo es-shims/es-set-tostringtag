@@ -10,7 +10,8 @@ var has = require('has');
 var toStringTag = hasToStringTag ? Symbol.toStringTag : null;
 
 module.exports = function setToStringTag(object, value) {
-	if (toStringTag && !has(object, toStringTag)) {
+	var overrideIfSet = arguments.length > 2 && arguments[2] && arguments[2].force;
+	if (toStringTag && (overrideIfSet || !has(object, toStringTag))) {
 		if ($defineProperty) {
 			$defineProperty(object, toStringTag, {
 				configurable: true,

@@ -28,6 +28,9 @@ test('setToStringTag', function (t) {
 		setToStringTag(tagged, 'new tag');
 		st.equal(String(tagged), '[object already tagged]', 'toStringTag is unchanged');
 
+		setToStringTag(tagged, 'new tag', { force: true });
+		st.equal(String(tagged), '[object new tag]', 'toStringTag is changed with force: true');
+
 		st.end();
 	});
 
