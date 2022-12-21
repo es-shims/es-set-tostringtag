@@ -1,0 +1,23 @@
+{
+	"name": "es-set-tostringtag",
+	"version": "0.0.0",
+	"description": "A helper to optimistically set Symbol.toStringTag, when possible.",
+	"main": "index.js",
+	"exports": {
+		".": "./index.js",
+		"./package.json": "./package.json"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/es-shims/es-set-tostringtag.git"
+	},
+	"author": "Jordan Harband <ljharb@gmail.com>",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/es-shims/es-set-tostringtag/issues"
+	},
+	"homepage": "https://github.com/es-shims/es-set-tostringtag#readme"
+}
