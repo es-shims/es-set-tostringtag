@@ -5,11 +5,12 @@ var GetIntrinsic = require('get-intrinsic');
 var $defineProperty = GetIntrinsic('%Object.defineProperty%', true);
 
 var hasToStringTag = require('has-tostringtag/shams')();
+var has = require('has');
 
 var toStringTag = hasToStringTag ? Symbol.toStringTag : null;
 
 module.exports = function setToStringTag(object, value) {
-	if (toStringTag) {
+	if (toStringTag && !has(object, toStringTag)) {
 		if ($defineProperty) {
 			$defineProperty(object, toStringTag, {
 				configurable: true,

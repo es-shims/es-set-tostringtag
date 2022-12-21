@@ -21,6 +21,13 @@ test('setToStringTag', function (t) {
 
 		st.equal(String(obj), '[object Object]', 'toStringTag works');
 
+		var tagged = {};
+		tagged[Symbol.toStringTag] = 'already tagged';
+		st.equal(String(tagged), '[object already tagged]', 'toStringTag works');
+
+		setToStringTag(tagged, 'new tag');
+		st.equal(String(tagged), '[object already tagged]', 'toStringTag is unchanged');
+
 		st.end();
 	});
 
