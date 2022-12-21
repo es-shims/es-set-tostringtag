@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v2.0.0](https://github.com/es-shims/es-set-tostringtag/compare/v1.0.0...v2.0.0) - 2022-12-21
+
+### Commits
+
+- [Tests] refactor tests [`168dcfb`](https://github.com/es-shims/es-set-tostringtag/commit/168dcfbb535c279dc48ccdc89419155125aaec18)
+- [Breaking] do not set toStringTag if it is already set [`226ab87`](https://github.com/es-shims/es-set-tostringtag/commit/226ab874192c625d9e5f0e599d3f60d2b2aa83b5)
+- [New] add `force` option to set even if already set [`1abd4ec`](https://github.com/es-shims/es-set-tostringtag/commit/1abd4ecb282f19718c4518284b0293a343564505)
+
 ## v1.0.0 - 2022-12-21
 
 ### Commits
