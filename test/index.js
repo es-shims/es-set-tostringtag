@@ -9,6 +9,7 @@ var setToStringTag = require('../');
 test('setToStringTag', function (t) {
 	t.equal(typeof setToStringTag, 'function', 'is a function');
 
+	/** @type {{ [Symbol.toStringTag]?: typeof sentinel }} */
 	var obj = {};
 	var sentinel = {};
 
@@ -21,6 +22,7 @@ test('setToStringTag', function (t) {
 
 		st.equal(String(obj), '[object Object]', 'toStringTag works');
 
+		/** @type {{ [Symbol.toStringTag]?: string }} */
 		var tagged = {};
 		tagged[Symbol.toStringTag] = 'already tagged';
 		st.equal(String(tagged), '[object already tagged]', 'toStringTag works');
