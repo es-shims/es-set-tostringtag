@@ -43,9 +43,9 @@
 		"tape": "^5.7.5"
 	},
 	"dependencies": {
-		"get-intrinsic": "^1.2.2",
-		"has-tostringtag": "^1.0.0",
-		"hasown": "^2.0.0"
+		"get-intrinsic": "^1.2.4",
+		"has-tostringtag": "^1.0.2",
+		"hasown": "^2.0.1"
 	},
 	"engines": {
 		"node": ">= 0.4"
