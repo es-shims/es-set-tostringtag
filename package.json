@@ -14,7 +14,7 @@
 		"prepublish": "not-in-publish || npm run prepublishOnly",
 		"prelint": "evalmd README.md",
 		"lint": "eslint --ext=js,mjs .",
-		"postlint": "tsc -p .",
+		"postlint": "tsc -p . && attw -P",
 		"pretest": "npm run lint",
 		"tests-only": "tape 'test/**/*.js'",
 		"test": "npm run tests-only",
@@ -33,6 +33,7 @@
 	},
 	"homepage": "https://github.com/es-shims/es-set-tostringtag#readme",
 	"devDependencies": {
+		"@arethetypeswrong/cli": "^0.15.1",
 		"@ljharb/eslint-config": "^21.1.0",
 		"@types/get-intrinsic": "^1.2.2",
 		"@types/has-symbols": "^1.0.2",
@@ -45,7 +46,7 @@
 		"npmignore": "^0.3.1",
 		"safe-publish-latest": "^2.0.0",
 		"tape": "^5.7.5",
-		"typescript": "^5.4.0-dev.20240220"
+		"typescript": "next"
 	},
 	"dependencies": {
 		"get-intrinsic": "^1.2.4",
