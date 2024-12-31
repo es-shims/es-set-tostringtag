@@ -40,6 +40,29 @@ test('setToStringTag', function (t) {
 		setToStringTag(tagged, 'new tag', { force: true });
 		st.equal(String(tagged), '[object new tag]', 'toStringTag is changed with force: true');
 
+		st.deepEqual(
+			Object.getOwnPropertyDescriptor(tagged, Symbol.toStringTag),
+			{
+				configurable: true,
+				enumerable: false,
+				value: 'new tag',
+				writable: false
+			},
+			'has expected property descriptor'
+		);
+
+		setToStringTag(tagged, 'new tag', { force: true, nonConfigurable: true });
+		st.deepEqual(
+			Object.getOwnPropertyDescriptor(tagged, Symbol.toStringTag),
+			{
+				configurable: false,
+				enumerable: false,
+				value: 'new tag',
+				writable: false
+			},
+			'is nonconfigurable'
+		);
+
 		st.end();
 	});
 

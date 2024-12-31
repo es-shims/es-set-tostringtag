@@ -30,6 +30,9 @@ An optional options argument can be provided as the third argument. The availabl
 ### `force`
 If the `force` option is set to `true`, the toStringTag will be set even if it is already set.
 
+### `nonConfigurable`
+If the `nonConfigurable` option is set to `true`, the toStringTag will be defined as non-configurable when possible.
+
 ## Tests
 Simply clone the repo, `npm install`, and run `npm test`
 

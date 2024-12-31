@@ -3,6 +3,7 @@ declare function setToStringTag(
     value: string | unknown,
     options?: {
         force?: boolean;
+        nonConfigurable?: boolean;
     },
 ): void;
 
