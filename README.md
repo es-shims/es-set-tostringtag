@@ -9,6 +9,7 @@
 
 A helper to optimistically set Symbol.toStringTag, when possible.
 
+## Example
 Most common usage:
 ```js
 var assert = require('assert');
@@ -22,6 +23,12 @@ setToStringTag(obj, 'tagged!');
 
 assert.equal(Object.prototype.toString.call(obj), '[object tagged!]');
 ```
+
+## Options
+An optional options argument can be provided as the third argument. The available options are:
+
+### `force`
+If the `force` option is set to `true`, the toStringTag will be set even if it is already set.
 
 ## Tests
 Simply clone the repo, `npm install`, and run `npm test`
