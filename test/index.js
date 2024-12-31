@@ -15,6 +15,13 @@ test('setToStringTag', function (t) {
 
 	setToStringTag(obj, sentinel);
 
+	t['throws'](
+		// @ts-expect-error
+		function () { setToStringTag(obj, sentinel, { force: 'yes' }); },
+		TypeError,
+		'throws if options is not an object'
+	);
+
 	t.test('has Symbol.toStringTag', { skip: !hasToStringTag }, function (st) {
 		st.ok(hasOwn(obj, Symbol.toStringTag), 'has toStringTag property');
 
