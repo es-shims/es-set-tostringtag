@@ -49,7 +49,7 @@
 		"typescript": "next"
 	},
 	"dependencies": {
-		"get-intrinsic": "^1.2.4",
+		"get-intrinsic": "^1.2.6",
 		"has-tostringtag": "^1.0.2",
 		"hasown": "^2.0.2"
 	},
